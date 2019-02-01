@@ -6,98 +6,46 @@
     <title>Jeff's Dope Site</title>
     <style>
       @keyframes hide {
-        from {
-          transform: scale(2.0);
-        }
-        90% {
-          transform: scale(1.8);
-        }
-        100% {
-          transform: scale(0);
-        }
+        from { transform: scale(2.0); }
+        90%  { transform: scale(1.8); }
+        100% { transform: scale(0); }
       }
       @keyframes FLY_EAGLE_FLY {
-        from {
-          transform: translateX(-250px);
-        }
-        49% {
-          transform: translateX(100%);
-        }
-        50% {
-          transform: translateX(100%);
-        }
-        99% {
-          transform: translateX(-250px);
-        }
-        to {
-          transform: translateX(-250px);
-        }
+        from { transform: translateX(-250px); }
+        49%  { transform: translateX(100%); }
+        50%  { transform: translateX(100%); }
+        99%  { transform: translateX(-250px); }
+        to   { transform: translateX(-250px); }
       }
       @keyframes SATAN {
-        from {
-          -webkit-filter: invert(0);
-        }
-        to {
-          -webkit-filter: invert(100%);
-        }
+        from { -webkit-filter: invert(0); }
+        to   { -webkit-filter: invert(100%); }
 
       }
       @keyframes winningSpin {
-        from {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(calc(100vh - 10rem));
-        }
-        to {
-          transform: translateY(0);
-        }
+        from { transform: translateY(0); }
+        50%  { transform: translateY(calc(100vh - 10rem)); }
+        to   { transform: translateY(0); }
       }
       @keyframes winningGrow {
-        from {
-          transform: scale(1.0);
-        }
-        25% {
-          transform: scale(1.5);
-        }
-        50% {
-          transform: scale(1.2);
-        }
-        75% {
-          transform: scale(1.1);
-        }
-        to {
-          transform: scale(1.0);
-        }
+        from { transform: scale(1.0); }
+        25%  { transform: scale(1.5); }
+        50%  { transform: scale(1.2); }
+        75%  { transform: scale(1.1); }
+        to   { transform: scale(1.0); }
       }
       @keyframes winningRainbow {
-        from {
-          color: rgb(255, 0, 0);
-        }
-        16.6% {
-          color: rgb(255, 0, 255);
-        }
-        33.3% {
-          color: rgb(0, 0, 255);
-        }
-        50% {
-          color: rgb(0, 255, 255);
-        }
-        66.6% {
-          color: rgb(0, 255, 0);
-        }
-        83.3% {
-          color: rgb(255, 255, 0);
-        }
-        to {
-          color: rgb(255, 0, 0);
-        }
+        from  { color: rgb(255, 0, 0); }
+        16.6% { color: rgb(255, 0, 255); }
+        33.3% { color: rgb(0, 0, 255); }
+        50%   { color: rgb(0, 255, 255); }
+        66.6% { color: rgb(0, 255, 0); }
+        83.3% { color: rgb(255, 255, 0); }
+        to    { color: rgb(255, 0, 0); }
       }
-      *,
-      *:before,
-      *:after {
-        box-sizing: border-box;
-      }
+
+      *, *:before, *:after { box-sizing: border-box; }
+
       body {
         background: url(/img/baller.gif) no-repeat;
         background-size: 100% 100%;
@@ -105,6 +53,7 @@
         margin: 0;
         width: 100%;
       }
+      
       section {
         display: -webkit-flex;;
         display: flex;
@@ -112,6 +61,7 @@
         justify-content: space-around;
         width: 100%;
       }
+
       [data-gif] {
         background-size: 100% 100%;
         cursor: pointer;
@@ -121,26 +71,20 @@
         transition: 0.3s transform cubic-bezier(0, 0, 0.3, 1.0);
         width: 100%;
       }
-      [data-gif].dead {
-        transform: scale(0) rotate(720deg);
-      }
-      [data-gif="freedom"] {
-        background-image: url(/img/freedom.gif);
-      }
-      [data-gif="trump"] {
-        background-image: url(/img/trump.gif);
-      }
-      [data-gif="cash"] {
-        background-image: url(/img/cash.gif);
-      }
+
+      [data-gif].dead      { transform: scale(0) rotate(720deg);      }
+      [data-gif="freedom"] { background-image: url(/img/freedom.gif); }
+      [data-gif="trump"]   { background-image: url(/img/trump.gif);   }
+      [data-gif="cash"]    { background-image: url(/img/cash.gif);    }
+
       .explosion {
         animation: hide 0.8s normal forwards ease-in-out;
-        /* background: url(/img/explosion.gif) no-repeat; */
         height: 200px;
         position: absolute;
         width: 200px;
         z-index: 99999;
       }
+
       #jeff {
         background: url(img/jeff.png) no-repeat;
         background-position: 50% 100%;
@@ -149,6 +93,7 @@
         position: absolute;
         width: 100%;
       }
+
       #eagle {
         animation: FLY_EAGLE_FLY 3s linear infinite;
         background: url(img/eagle.gif) no-repeat;
@@ -159,6 +104,7 @@
         width: 100%;
         z-index: 3000;
       }
+
       #winning {
         animation: winningSpin 6s linear infinite;
         display: none;
@@ -170,117 +116,31 @@
         top: 0;
         width: 100%;
       }
-      #winning.active {
-        display: block;
-      }
-      #winning span {
-        display: inline-block;
-      }
-      #winning [class*="w"] {
-        animation: winningRainbow 0.5s linear infinite;
-      }
-      #winning [class*="s"] {
-        animation: winningGrow 1s linear infinite;
-      }
-      #winning .w1 {
-        -webkit-animation-delay: 0;
-        -moz-animation-delay: 0;
-        -o-animation-delay: 0;
-        animation-delay: 0;
-      }
-      #winning .w2 {
-        -webkit-animation-delay: 20ms;
-        -moz-animation-delay: 20ms;
-        -o-animation-delay: 20ms;
-        animation-delay: 20ms;
-      }
-      #winning .w3 {
-        -webkit-animation-delay: 40ms;
-        -moz-animation-delay: 40ms;
-        -o-animation-delay: 40ms;
-        animation-delay: 40ms;
-      }
-      #winning .w4 {
-        -webkit-animation-delay: 60ms;
-        -moz-animation-delay: 60ms;
-        -o-animation-delay: 60ms;
-        animation-delay: 60ms;
-      }
-      #winning .w5 {
-        -webkit-animation-delay: 80ms;
-        -moz-animation-delay: 80ms;
-        -o-animation-delay: 80ms;
-        animation-delay: 80ms;
-      }
-      #winning .w6 {
-        -webkit-animation-delay: 100ms;
-        -moz-animation-delay: 100ms;
-        -o-animation-delay: 100ms;
-        animation-delay: 100ms;
-      }
-      #winning .w7 {
-        -webkit-animation-delay: 120ms;
-        -moz-animation-delay: 120ms;
-        -o-animation-delay: 120ms;
-        animation-delay: 120ms;
-      }
-      #winning .w8 {
-        -webkit-animation-delay: 140ms;
-        -moz-animation-delay: 140ms;
-        -o-animation-delay: 140ms;
-        animation-delay: 140ms;
-      }
 
-      #winning .s1 {
-        -webkit-animation-delay: 0;
-        -moz-animation-delay: 0;
-        -o-animation-delay: 0;
-        animation-delay: 0;
-      }
-      #winning .s2 {
-        -webkit-animation-delay: 100ms;
-        -moz-animation-delay: 100ms;
-        -o-animation-delay: 100ms;
-        animation-delay: 100ms;
-      }
-      #winning .s3 {
-        -webkit-animation-delay: 200ms;
-        -moz-animation-delay: 200ms;
-        -o-animation-delay: 200ms;
-        animation-delay: 200ms;
-      }
-      #winning .s4 {
-        -webkit-animation-delay: 300ms;
-        -moz-animation-delay: 300ms;
-        -o-animation-delay: 300ms;
-        animation-delay: 300ms;
-      }
-      #winning .s5 {
-        -webkit-animation-delay: 400ms;
-        -moz-animation-delay: 400ms;
-        -o-animation-delay: 400ms;
-        animation-delay: 400ms;
-      }
-      #winning .s6 {
-        -webkit-animation-delay: 500ms;
-        -moz-animation-delay: 500ms;
-        -o-animation-delay: 500ms;
-        animation-delay: 500ms;
-      }
-      #winning .s7 {
-        -webkit-animation-delay: 600ms;
-        -moz-animation-delay: 600ms;
-        -o-animation-delay: 600ms;
-        animation-delay: 600ms;
-      }
-      #winning .s8 {
-        -webkit-animation-delay: 700ms;
-        -moz-animation-delay: 700ms;
-        -o-animation-delay: 700ms;
-        animation-delay: 700ms;
-      }
-      body {
-      }
+      #winning.active { display: block; }
+      #winning span   { display: inline-block; }
+
+      #winning [class*="w"] { animation: winningRainbow 0.5s linear infinite; }
+      #winning [class*="s"] { animation: winningGrow 1s linear infinite; }
+
+      #winning .w1 { animation-delay: 0;     }
+      #winning .w2 { animation-delay: 20ms;  }
+      #winning .w3 { animation-delay: 40ms;  }
+      #winning .w4 { animation-delay: 60ms;  }
+      #winning .w5 { animation-delay: 80ms;  }
+      #winning .w6 { animation-delay: 100ms; }
+      #winning .w7 { animation-delay: 120ms; }
+      #winning .w8 { animation-delay: 140ms; }
+
+      #winning .s1 { animation-delay: 0;     }
+      #winning .s2 { animation-delay: 100ms; }
+      #winning .s3 { animation-delay: 200ms; }
+      #winning .s4 { animation-delay: 300ms; }
+      #winning .s5 { animation-delay: 400ms; }
+      #winning .s6 { animation-delay: 500ms; }
+      #winning .s7 { animation-delay: 600ms; }
+      #winning .s8 { animation-delay: 700ms; }
+
     </style>
     <script>
       window.addEventListener('load', function () {
